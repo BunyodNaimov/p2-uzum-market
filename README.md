@@ -1,1 +1,1 @@
-# p2-uzum-market
+# uzum_market_bot
