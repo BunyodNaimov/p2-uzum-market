@@ -9,9 +9,12 @@ from keyboard import btn
 from handlers import router
 from aiogram.client.session.aiohttp import AiohttpSession
 
+from products import products
+
 load_dotenv()
 
 BOT_TOKEN = getenv("BOT_TOKEN")
+PROVIDER_TOKEN = getenv("PROVIDER_TOKEN")
 
 # session=AiohttpSession(proxy="http://proxy.server:3128")
 # bot = Bot(token=BOT_TOKEN, session=session)
