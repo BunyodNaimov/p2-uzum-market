@@ -28,6 +28,7 @@ async def command_start_handler(message: Message) -> None:
 @dp.message(F.func(lambda msg: msg.web_app_data if msg.web_app_data else None))
 async def get_web_app_data(message: Message):
     data = message.web_app_data.data
+    print(data)
     web_products = data.split("|")
     result = []
     for web_product in web_products:
