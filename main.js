@@ -1,5 +1,20 @@
-let tg = Window.Telegram.WebApp;
+let tg = window.Telegram.WebApp;
 tg.expand();
+
+tg.MainButton.setText("Оплатить");
+tg.MainButton.hide();
+
+tg.MainButton.onClick(function() {
+  const products = [];
+  document.querySelectorAll('.product-card').forEach(card => {
+    const name = card.querySelector('.product-name').innerText;
+    const qty = parseInt(card.querySelector('.qty-number').innerText);
+    if (qty > 0) {
+      products.push({ name, qty });
+    }
+  });
+  tg.sendData(JSON.stringify(products));
+});
 
 function increase(btn) {
   const qtyDiv = btn.parentElement.querySelector('.qty-number');
